@@ -14,7 +14,7 @@ class {{ prefix }}{{ module_info.name }}Wireframe {
     var customView: (UIViewController & {{ prefix }}{{ module_info.name }}ViewInput)?
 
     /// Custom presenter of this VIPER module (if nil, default presenter for this module will be used)
-    var customPresenter: {{ prefix }}Presenter & ({{ prefix }}{{ module_info.name }}InteractorOutput & {{ prefix }}{{ module_info.name }}ViewOutput & {{ prefix }}{{ module_info.name }}PresenterInput)?
+    var customPresenter: ({{ prefix }}Presenter & {{ prefix }}{{ module_info.name }}InteractorOutput & {{ prefix }}{{ module_info.name }}ViewOutput & {{ prefix }}{{ module_info.name }}PresenterInput)?
 
     /// Custom interactor of this VIPER module (if nil, default interactor for this module will be used)
     var customInteractor: {{ prefix }}{{ module_info.name }}InteractorInput?
