@@ -1,0 +1,25 @@
+# Info
+name: "ASRambaViper"
+summary: "VIPER template for Swift"
+author: "Alexey Shagaleev"
+version: "0.1"
+license: "MIT"
+
+code_files:
+# View layer
+- {name: View/View.swift, path: Source/View/view.swift.liquid}
+
+# Presenter layer
+- {name: Presenter/Presenter.swift, path: Source/Presenter/presenter.swift.liquid}
+
+# Interactor layer
+- {name: Interactor/Interactor.swift, path: Source/Interactor/interactor.swift.liquid}
+
+# Router layer
+- {name: Router/Router.swift, path: Source/Router/router.swift.liquid}
+
+# Wireframe
+- {name: Wireframe/Wireframe.swift, path: Source/Wireframe/wireframe.swift.liquid}
+
+# Protocols
+- {name: Protocols.swift, path: Source/protocols.swift.liquid}

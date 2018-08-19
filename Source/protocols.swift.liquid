@@ -1,0 +1,49 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}, {{ module_info.name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+protocol {{ prefix }}{{ module_info.name }}RouterInput {
+
+}
+
+protocol {{ prefix }}{{ module_info.name }}PresenterInput: class {
+
+    /// VIPER module view controller
+    weak var view: (UIViewController)! { get set }
+
+    /// Presenter's interactor
+    var interactor: {{ prefix }}{{ module_info.name }}InteractorInput! { get set }
+
+    /// Presenter's router
+    var router: {{ prefix }}{{ module_info.name }}RouterInput! { get set }
+
+}
+
+protocol {{ prefix }}{{ module_info.name }}ViewInput: class {
+
+    /// View's output
+    var output: {{ prefix }}{{ module_info.name }}ViewOutput! { get set }
+
+}
+
+protocol {{ prefix }}{{ module_info.name }}ViewOutput {
+
+    /// Called, when view is ready to work
+    func viewDidLoad()
+
+}
+
+protocol {{ prefix }}{{ module_info.name }}InteractorInput {
+
+    /// Interactor's output
+    weak var output: {{ prefix }}{{ module_info.name }}InteractorOutput! { get set }
+
+}
+
+protocol {{ prefix }}{{ module_info.name }}InteractorOutput: class {
+
+}
