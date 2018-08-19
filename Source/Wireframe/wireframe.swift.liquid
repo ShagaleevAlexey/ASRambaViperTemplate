@@ -14,7 +14,7 @@ class {{ prefix }}{{ module_info.name }}Wireframe {
     var customView: (UIViewController & {{ prefix }}{{ module_info.name }}ViewInput)?
 
     /// Custom presenter of this VIPER module (if nil, default presenter for this module will be used)
-    var customPresenter: ({{ prefix }}{{ module_info.name }}InteractorOutput & {{ prefix }}{{ module_info.name }}ViewOutput & {{ prefix }}{{ module_info.name }}PresenterInput)?
+    var customPresenter: {{ prefix }}Presenter & ({{ prefix }}{{ module_info.name }}InteractorOutput & {{ prefix }}{{ module_info.name }}ViewOutput & {{ prefix }}{{ module_info.name }}PresenterInput)?
 
     /// Custom interactor of this VIPER module (if nil, default interactor for this module will be used)
     var customInteractor: {{ prefix }}{{ module_info.name }}InteractorInput?
@@ -24,7 +24,7 @@ class {{ prefix }}{{ module_info.name }}Wireframe {
 
     /// Module initialization, after calling this method, you can use presenter's input view property to get access to module's view controller
     func initModule() -> {{ prefix }}{{ module_info.name }}PresenterInput {
-        let view = customView ?? (UIStoryboard(name: <#Storyboard name#>, bundle: nil).instantiateViewController(withIdentifier: <#VC identifier#>) as! {{ prefix }}{{ module_info.name }}View)
+        let view = customView ?? (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: {{ prefix }}{{ module_info.name }}View.self).components(separatedBy: ".").last!) as! {{ prefix }}{{ module_info.name }}View)
         let router = customRouter ?? {{ prefix }}{{ module_info.name }}Router()
         let presenter = customPresenter ?? {{ prefix }}{{ module_info.name }}Presenter()
         var interactor = customInteractor ?? {{ prefix }}{{ module_info.name }}Interactor()

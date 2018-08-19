@@ -8,7 +8,7 @@
 
 import UIKit
 
-class {{ prefix }}{{ module_info.name }}Presenter {
+class {{ prefix }}{{ module_info.name }}Presenter: {{ prefix }}Presenter {
 
     weak var view: (UIViewController & {{ prefix }}{{ module_info.name }}ViewInput)!
     var interactor: {{ prefix }}{{ module_info.name }}InteractorInput!
